@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MathsClientServerGUI.Controller">
+   <children>
+      <Label layoutX="243.0" layoutY="24.0" text="Adding Client" />
+      <TextField fx:id="field1" layoutX="14.0" layoutY="71.0" promptText="First number" />
+      <TextField fx:id="field2" layoutX="14.0" layoutY="109.0" promptText="Second number" />
+      <Button layoutX="14.0" layoutY="144.0" mnemonicParsing="false" onAction="#add" text="Add" />
+      <Button layoutX="133.0" layoutY="144.0" mnemonicParsing="false" text="Clear" />
+      <Pane layoutX="14.0" layoutY="179.0" prefHeight="168.0" prefWidth="171.0">
+         <children>
+            <Text fx:id="status" layoutX="4.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" textAlignment="CENTER" wrappingWidth="164.7294921875" />
+            <Text fx:id="display" layoutX="14.0" layoutY="6.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Result" textAlignment="CENTER" wrappingWidth="157.7294921875" y="75.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
