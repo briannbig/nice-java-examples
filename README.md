@@ -1,2 +1,2 @@
-# nice-java-examples
-this repo contains simple programs that are ideal for beginner to advance learning and being profficient in java programming
+# nice-java-examples:octocat:
+This repo is ideal for those learning java programming  
