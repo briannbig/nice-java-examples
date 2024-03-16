@@ -1,16 +1,13 @@
 /**
  * @author <a href="briannbig@gmail.com">Brian Barasa </a>
  */
-public class CounterTask extends BaseTask {
-
-    public CounterTask() {
+public class TensCounterTask extends BaseTask {
+    public TensCounterTask() {
         super();
-        this.start();
     }
 
-    public CounterTask(double interval) {
+    public TensCounterTask(double interval) {
         super(interval);
-        this.start();
     }
 
     @Override
@@ -19,7 +16,7 @@ public class CounterTask extends BaseTask {
         for (int i = 1; i <= 10; i++) {
             try {
                 Thread.sleep((long) (interval * 1000));
-                System.out.println("counter[" + id + "] is at " + i);
+                System.out.println("counter[" + id + "] is at " + i * 10);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
