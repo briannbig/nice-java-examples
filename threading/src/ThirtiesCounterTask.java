@@ -11,16 +11,11 @@ public class ThirtiesCounterTask implements Runnable {
 
     public ThirtiesCounterTask() {
         id = ++counter;
-        // passing this object as the task to the thread object
-        new Thread(this).start();
     }
 
     public ThirtiesCounterTask(double interval) {
-
         id = ++counter;
         this.interval = interval;
-        // passing this object as the task to the thread object
-        new Thread(this).start();
     }
 
     @Override
