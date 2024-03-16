@@ -1,5 +1,7 @@
 /**
  * @author <a href="briannbig@gmail.com">Brian Barasa </a>
+ * this class does not have {@link Thread}'s start() method in it's constructors and hence the {@link Thread}'s
+ * run() method will be executed when start() mehod is called on the {@link TensCounterTask}'s object
  */
 public class TensCounterTask extends BaseTask {
     public TensCounterTask() {

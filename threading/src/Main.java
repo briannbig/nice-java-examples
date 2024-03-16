@@ -9,10 +9,14 @@ public class Main {
          new CounterTask(2);
         new CounterTask(1.5);
         new CounterTask(); */
-        new TensCounterTask().start();
-        new TensCounterTask(1.7).start();
 
         // Creating threads using Threads API: 2nd technique
+//        new TensCounterTask().start();
+//        new TensCounterTask(1.7).start();
+
+        // Creating threads using Threads API: 3rd technique
+        new TwentiesCounterTask(1.2);
+
         Thread.sleep(5000);
         System.out.println("Main thread ends....");
 

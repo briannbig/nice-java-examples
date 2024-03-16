@@ -1,5 +1,6 @@
 /**
  * @author <a href="briannbig@gmail.com">Brian Barasa </a>
+ * this demonstrates how to achieve threading utilizing Thread API by extending the {@link Thread} class
  */
 public abstract class BaseTask extends Thread {
     protected double interval = 1;
