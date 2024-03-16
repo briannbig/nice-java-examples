@@ -1,3 +1,5 @@
+package threadsApi;
+
 /**
  * @author <a href="briannbig@gmail.com">Brian Barasa </a>
  * this class has {@link Thread}'s start() method in it's constructors and hence automatically calls {@link Thread}'s run method on instantiation

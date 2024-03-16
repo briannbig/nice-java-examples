@@ -1,21 +1,27 @@
+package threadsApi;
+
 /**
  * @author <a href="briannbig@gmail.com">Brian Barasa </a>
  * this demonstrates how to achieve threading utilizing Thread API by immplementing the {@link Runnable} interface. <br>
- * This is more like declaring this class as task. It is similar to {@link TwentiesCounterTask} except that the {@link Thread}
- * instance is created by calling it on the objects class
+ * This is more like declaring this class as task. Note how "{@link Thread#start()} is passed in the constructor
  */
-public class ThirtiesCounterTask implements Runnable {
+public class TwentiesCounterTask implements Runnable {
     protected double interval = 1;
     protected final int id;
     private static int counter = 0;
 
-    public ThirtiesCounterTask() {
+    public TwentiesCounterTask() {
         id = ++counter;
+        // passing this object as the task to the thread object
+        new Thread(this).start();
     }
 
-    public ThirtiesCounterTask(double interval) {
+    public TwentiesCounterTask(double interval) {
+
         id = ++counter;
         this.interval = interval;
+        // passing this object as the task to the thread object
+        new Thread(this).start();
     }
 
     @Override
