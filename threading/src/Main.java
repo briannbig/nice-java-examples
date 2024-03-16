@@ -16,6 +16,8 @@ public class Main {
 
         // Creating threads using Threads API: 3rd technique
         new TwentiesCounterTask(1.2);
+        // Creating threads using Threads API: 4th technique
+        new ThirtiesCounterTask(1.4);
 
         Thread.sleep(5000);
         System.out.println("Main thread ends....");
