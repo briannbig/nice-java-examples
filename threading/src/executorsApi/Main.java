@@ -20,6 +20,12 @@ public class Main {
         // the following throws a java.util.concurrent.RejectedExecutionException
         // executorService.submit(new SimpleCounter());
 
+        ExecutorService service2 = Executors.newCachedThreadPool();
+        for (int i = 0; i < 1000; i++) {
+            service2.submit(new TensCounter());
+        }
+        service2.shutdown();
+
 
         System.out.println("... Main thread ends");
     }
