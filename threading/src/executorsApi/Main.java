@@ -8,23 +8,30 @@ import java.util.concurrent.Executors;
  */
 public class Main {
     public static void main(String[] args) {
+
         System.out.println("Main thread starts....");
 
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
-        executorService.submit(new SimpleCounter());
-        executorService.submit(new SimpleCounter(1.3));
-        executorService.submit(new SimpleCounter(1.5));
-        executorService.submit(new SimpleCounter());
-
-        executorService.shutdown();
+//        ExecutorService executorService = Executors.newFixedThreadPool(3);
+//        executorService.submit(new SimpleCounter());
+//        executorService.submit(new SimpleCounter(1.3));
+//        executorService.submit(new SimpleCounter(1.5));
+//        executorService.submit(new SimpleCounter());
+//
+//        executorService.shutdown();
         // the following throws a java.util.concurrent.RejectedExecutionException
         // executorService.submit(new SimpleCounter());
 
         ExecutorService service2 = Executors.newCachedThreadPool();
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 10; i++) {
             service2.submit(new TensCounter());
         }
         service2.shutdown();
+
+        ExecutorService service3 = Executors.newVirtualThreadPerTaskExecutor();
+        for (int i = 0; i < 10000; i++) {
+            service3.submit(new TensCounter());
+        }
+
 
 
         System.out.println("... Main thread ends");
