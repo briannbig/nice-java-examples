@@ -1,3 +1,7 @@
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 void main() {
 
@@ -5,7 +9,8 @@ void main() {
 
     try {
         methodA();
-    } catch (InterruptedException e) {
+        methodB();
+    } catch (InterruptedException | ExecutionException e) {
         throw new RuntimeException(e);
     }
 
@@ -25,5 +30,22 @@ void methodA() throws InterruptedException {
     Thread thread2 = builder.start(task);
     System.out.println(STR."Thread2 name: \{thread2.getName()}");
     thread2.join();
+
+}
+
+/**
+ * Creating and Running a Virtual Thread with the {@link Executors#newVirtualThreadPerTaskExecutor()} Method
+ */
+void methodB() throws ExecutionException, InterruptedException {
+    // This example creates an ExecutorService with the Executors.newVirtualThreadPerTaskExecutor() method.
+    // Whenever ExecutorService.submit(Runnable) is called, a new virtual thread is created and started to run the task.
+    // This method returns an instance of Future. Note that the method Future.get() waits for the thread's task to complete.
+    // Consequently, this example prints a message once the virtual thread's task is complete.
+
+
+    ExecutorService myExecutor = Executors.newVirtualThreadPerTaskExecutor();
+    Future<?> future = myExecutor.submit(() -> System.out.println("Running thread"));
+    future.get();
+    System.out.println("Task completed");
 
 }
